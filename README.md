@@ -1,11 +1,5 @@
 # What is VersaLog.go?
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
 [![Go Version](https://img.shields.io/badge/go-%3E%3D1.19-blue.svg)](https://golang.org/)
 [![Go Report Card](https://goreportcard.com/badge/github.com/VersaLog/VersaLog.go)](https://goreportcard.com/report/github.com/VersaLog/VersaLog.go)
 [![Go Reference](https://pkg.go.dev/badge/github.com/VersaLog/VersaLog.go.svg)](https://pkg.go.dev/github.com/VersaLog/VersaLog.go)
@@ -14,6 +8,66 @@
 What is VersaLog.go?
 VersaLog is a powerful and flexible logging library for Golang.
 It supports everything from simple usage to advanced, highly customizable configurations to meet a wide range of needs.
+
+## Feature
+
+### Basic Logging
+
+- Supports standard log levels:
+   - `INFO`, `ERROR`, `WARNING`, `DEBUG`, `CRITICAL`
+- Colored output for better readability
+- Symbol-based prefixes (e.g. `[+]`, `[-]`, `[!]`)
+
+### Multiple Output Formats
+
+**Easily switch between different log styles:**
+
+- `simple` → `[+] message`
+- `simple2` → `[TIME] [+] message`
+- `detailed` → `[TIME][LEVEL] : message`
+- `file` → `[FILE:LINE][LEVEL] message`
+
+### Tag System
+
+- Add custom tags to logs
+- Supports multiple tags (e.g. `["API", "AUTH"]`)
+- Optional default tags
+
+### File & Line Tracking
+
+- Display caller file name and line number
+- Useful for debugging large projects
+
+### Log File Saving
+
+- Automatically save logs to files
+- Output path: `./log/YYYY-MM-DD.log`
+- Select which log levels to save
+
+### Auto Cleanup
+
+- Automatically deletes old log files (default: 7 days)
+- Keeps your log directory clean
+
+### Auto Cleanup
+
+- Disable console output
+- Useful for background services
+
+### Exception Handling
+
+- Automatically captures unhandled exceptions
+- Logs them as `CRITICAL`
+
+### Desktop Notifications
+
+- Optional desktop alerts for errors and critical logs
+- Uses `plyer.notification`
+
+### Asynchronous Logging
+
+- Non-blocking log processing using threads and queues
+- Improves performance in high-load environments
 
 ## Support
 
@@ -73,25 +127,3 @@ logger := versalog.NewVersaLog(
 ```
 [2025-08-06 04:10:36][INFO] : ok
 ```
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/kaedeek"><img src="https://avatars.githubusercontent.com/u/170544738?v=4?s=100" width="100px;" alt="ₖₐₑ𝒹ₑ"/><br /><sub><b>ₖₐₑ𝒹ₑ</b></sub></a><br /><a href="https://github.com/kayu0514/VersaLog.go/commits?author=kaedeek" title="Code">💻</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
